@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>{% block title %}My Blog{% endblock %}</title>
+  <title>{% block title %}{% endblock %}</title>
+  {% block extra_head %}{% endblock %}
   <meta charset="UTF-8">
   <link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
@@ -15,7 +16,7 @@
     <div id="sidebar">
       {% block sidebar %}
       <h2>My Blog</h2>
-      <p>This is the Blog content.</p>
+      <p>{{content}}</p>
       {% endblock %}
     </div>
   </body>
