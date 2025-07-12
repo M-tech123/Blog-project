@@ -1,0 +1,10 @@
+{%extends 'blog/base.html'%} {%block title%}Add comment{%endblock%} {%block
+content%} {%if comment%}
+<h2>Your comment has been added.</h2>
+<p>
+  <a
+    href="{% url 'blog:post_detail' post.publish.year post.publish.month post.publish.day post.slug %}"
+    >Back to post</a
+  >
+</p>
+{%else%} {% include 'blog/post/comment_form.html' %} {% endif %} {%endblock%}
